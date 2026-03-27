@@ -16,7 +16,7 @@ Proyecto: Salud Mental en el Trabajo Remoto
 """
 
 from pathlib import Path
-from typing import Dict, Tuple
+from typing import Dict
 import pandas as pd
 from loguru import logger
 

@@ -12,7 +12,6 @@ Proyecto: Salud Mental en el Trabajo Remoto
 ================================================================================
 """
 
-import pytest
 import pandas as pd
 import sys
 from pathlib import Path
@@ -22,7 +21,6 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from etl.transform.build_dimensions import (
     _normalizar_genero,
     _clasificar_rango_etario,
-    _clasificar_empresa_tamano,
     construir_dim_tiempo,
     construir_dim_trabajo,
     construir_dim_demografia,

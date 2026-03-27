@@ -17,8 +17,6 @@ Proyecto: Salud Mental en el Trabajo Remoto
 ================================================================================
 """
 
-import hashlib
-from typing import Dict, List
 import pandas as pd
 from loguru import logger
 

@@ -15,7 +15,6 @@ Proyecto: Salud Mental en el Trabajo Remoto
 """
 
 import hashlib
-import numpy as np
 import pandas as pd
 from loguru import logger
 
@@ -309,7 +308,7 @@ def _determinar_soporte(row: pd.Series, dim_soporte: pd.DataFrame) -> int:
     if acceso:
         return dim_soporte[
             (dim_soporte['tipo_soporte'] == 'Employee Assistance Program') &
-            (dim_soporte['disponible'] == True)
+            (dim_soporte['disponible'] is True)
         ]['id_soporte'].iloc[0]
     else:
         return dim_soporte[

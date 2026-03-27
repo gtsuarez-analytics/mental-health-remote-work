@@ -83,7 +83,7 @@ def ejecutar_pipeline() -> None:
             logger.error("No se pudieron cargar los datos crudos")
             return
 
-        logger.info(f"Datasets cargados exitosamente")
+        logger.info("Datasets cargados exitosamente")
 
         # ── FASE 2: TRANSFORMACIÓN ─────────────────────────────────────
         logger.info("")
