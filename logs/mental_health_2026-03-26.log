@@ -1,0 +1,1108 @@
+2026-03-26 21:46:06 | INFO     | pipeline:etl.utils.logger_config:configurar_logger | Logger configurado para pipeline
+2026-03-26 21:46:06 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:46:06 | INFO     | pipeline:__main__:ejecutar_pipeline | INICIANDO PIPELINE ETL — SALUD MENTAL EN EL TRABAJO REMOTO
+2026-03-26 21:46:06 | INFO     | pipeline:__main__:ejecutar_pipeline | Fecha de ejecución: 2026-03-26 21:46:06
+2026-03-26 21:46:06 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:46:06 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:46:06 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 0: VALIDACIÓN DE DATOS
+2026-03-26 21:46:06 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:46:06 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === INICIANDO FASE DE EXTRACCIÓN ===
+2026-03-26 21:46:06 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Cargando dataset: data/raw/remote_work_mental_health.csv
+2026-03-26 21:46:06 | WARNING  | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Columnas faltantes en remote_work: {'Employment_Status', 'Company_Size', 'Productivity', 'Work_Life_Balance'}
+2026-03-26 21:46:06 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Dataset cargado: 5000 filas, 20 columnas
+2026-03-26 21:46:06 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Cargando dataset: data/raw/mental_health_tech_survey.csv
+2026-03-26 21:46:06 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Dataset cargado: 1259 filas, 27 columnas
+2026-03-26 21:46:06 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === EXTRACCIÓN COMPLETADA: 6259 registros totales ===
+2026-03-26 21:46:06 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Ejecutando validación de datasets...
+2026-03-26 21:46:06 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: remote_work_mental_health
+2026-03-26 21:46:06 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  col_Work_Location_sin_nulos
+  ✓ PASS  col_Mental_Health_Condition_sin_nulos
+  ✓ PASS  col_Age_sin_nulos
+  ✓ PASS  col_Gender_sin_nulos
+  ✓ PASS  edad_en_rango
+  ✓ PASS  horas_en_rango
+--------------------------------------------------
+Total: 9/9 validaciones pasadas
+2026-03-26 21:46:06 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: mental_health_tech_survey
+2026-03-26 21:46:06 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  generos_validos
+  ✗ FAIL  edad_en_rango
+--------------------------------------------------
+Total: 4/5 validaciones pasadas
+2026-03-26 21:46:06 | WARNING  | pipeline:etl.utils.validators:ejecutar_validacion | ✗ Algunos datasets fallaron validación
+2026-03-26 21:46:06 | WARNING  | pipeline:__main__:ejecutar_pipeline | Validación de datos: FALLIDA - continuando con precaución
+2026-03-26 21:46:06 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:46:06 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 1: EXTRACCIÓN
+2026-03-26 21:46:06 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:46:06 | ERROR    | pipeline:__main__:ejecutar_pipeline | ERROR EN EL PIPELINE: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2026-03-26 21:46:59 | INFO     | pipeline:etl.utils.logger_config:configurar_logger | Logger configurado para pipeline
+2026-03-26 21:46:59 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:46:59 | INFO     | pipeline:__main__:ejecutar_pipeline | INICIANDO PIPELINE ETL — SALUD MENTAL EN EL TRABAJO REMOTO
+2026-03-26 21:46:59 | INFO     | pipeline:__main__:ejecutar_pipeline | Fecha de ejecución: 2026-03-26 21:46:59
+2026-03-26 21:46:59 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:46:59 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:46:59 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 0: VALIDACIÓN DE DATOS
+2026-03-26 21:46:59 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:46:59 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === INICIANDO FASE DE EXTRACCIÓN ===
+2026-03-26 21:46:59 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Cargando dataset: data/raw/remote_work_mental_health.csv
+2026-03-26 21:46:59 | WARNING  | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Columnas faltantes en remote_work: {'Productivity', 'Company_Size', 'Work_Life_Balance', 'Employment_Status'}
+2026-03-26 21:46:59 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Dataset cargado: 5000 filas, 20 columnas
+2026-03-26 21:46:59 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Cargando dataset: data/raw/mental_health_tech_survey.csv
+2026-03-26 21:46:59 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Dataset cargado: 1259 filas, 27 columnas
+2026-03-26 21:46:59 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === EXTRACCIÓN COMPLETADA: 6259 registros totales ===
+2026-03-26 21:46:59 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Ejecutando validación de datasets...
+2026-03-26 21:46:59 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: remote_work_mental_health
+2026-03-26 21:46:59 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  col_Work_Location_sin_nulos
+  ✓ PASS  col_Mental_Health_Condition_sin_nulos
+  ✓ PASS  col_Age_sin_nulos
+  ✓ PASS  col_Gender_sin_nulos
+  ✓ PASS  edad_en_rango
+  ✓ PASS  horas_en_rango
+--------------------------------------------------
+Total: 9/9 validaciones pasadas
+2026-03-26 21:46:59 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: mental_health_tech_survey
+2026-03-26 21:46:59 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  generos_validos
+  ✗ FAIL  edad_en_rango
+--------------------------------------------------
+Total: 4/5 validaciones pasadas
+2026-03-26 21:46:59 | WARNING  | pipeline:etl.utils.validators:ejecutar_validacion | ✗ Algunos datasets fallaron validación
+2026-03-26 21:46:59 | WARNING  | pipeline:__main__:ejecutar_pipeline | Validación de datos: FALLIDA - continuando con precaución
+2026-03-26 21:46:59 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:46:59 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 1: EXTRACCIÓN
+2026-03-26 21:46:59 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:46:59 | INFO     | pipeline:__main__:ejecutar_pipeline | Datasets cargados exitosamente
+2026-03-26 21:46:59 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:46:59 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 2: TRANSFORMACIÓN
+2026-03-26 21:46:59 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:46:59 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | Construyendo dim_tiempo para el año 2024
+2026-03-26 21:46:59 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | dim_tiempo creada: 12 registros
+2026-03-26 21:46:59 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | Construyendo dim_trabajo
+2026-03-26 21:46:59 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | dim_trabajo creada: 861 registros
+2026-03-26 21:46:59 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | Construyendo dim_demografia
+2026-03-26 21:46:59 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | dim_demografia creada: 15 registros
+2026-03-26 21:46:59 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | Construyendo dim_soporte
+2026-03-26 21:46:59 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | dim_soporte creada: 5 registros
+2026-03-26 21:46:59 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | Construyendo fact_bienestar_laboral
+2026-03-26 21:47:00 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | fact_bienestar_laboral creada: 5000 registros
+2026-03-26 21:47:00 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:47:00 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 3: CARGA
+2026-03-26 21:47:00 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:47:00 | ERROR    | pipeline:etl.utils.db_connector:obtener_engine | Faltan variables de entorno requeridas para la conexión
+2026-03-26 21:47:00 | WARNING  | pipeline:__main__:ejecutar_pipeline | Error al conectar a PostgreSQL: DB_USER, DB_PASSWORD, DB_NAME son requeridos en el archivo .env
+2026-03-26 21:47:00 | INFO     | pipeline:__main__:ejecutar_pipeline | Guardando datos solo como CSV
+2026-03-26 21:47:00 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_tiempo.csv (12 filas)
+2026-03-26 21:47:00 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_trabajo.csv (861 filas)
+2026-03-26 21:47:00 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_demografia.csv (15 filas)
+2026-03-26 21:47:00 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_soporte.csv (5 filas)
+2026-03-26 21:47:00 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/fact_bienestar_laboral.csv (5000 filas)
+2026-03-26 21:47:00 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:47:00 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:47:00 | INFO     | pipeline:__main__:ejecutar_pipeline | PIPELINE ETL COMPLETADO EXITOSAMENTE
+2026-03-26 21:47:00 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:47:00 | INFO     | pipeline:__main__:ejecutar_pipeline | Resumen:
+2026-03-26 21:47:00 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_tiempo: 12 registros
+2026-03-26 21:47:00 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_trabajo: 861 registros
+2026-03-26 21:47:00 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_demografia: 15 registros
+2026-03-26 21:47:00 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_soporte: 5 registros
+2026-03-26 21:47:00 | INFO     | pipeline:__main__:ejecutar_pipeline |   - fact_bienestar_laboral: 5000 registros
+2026-03-26 21:47:00 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:47:58 | INFO     | pipeline:etl.utils.logger_config:configurar_logger | Logger configurado para pipeline
+2026-03-26 21:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | INICIANDO PIPELINE ETL — SALUD MENTAL EN EL TRABAJO REMOTO
+2026-03-26 21:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | Fecha de ejecución: 2026-03-26 21:47:58
+2026-03-26 21:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 0: VALIDACIÓN DE DATOS
+2026-03-26 21:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:47:58 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === INICIANDO FASE DE EXTRACCIÓN ===
+2026-03-26 21:47:58 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Cargando dataset: data/raw/remote_work_mental_health.csv
+2026-03-26 21:47:58 | WARNING  | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Columnas faltantes en remote_work: {'Work_Life_Balance', 'Productivity', 'Employment_Status', 'Company_Size'}
+2026-03-26 21:47:58 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Dataset cargado: 5000 filas, 20 columnas
+2026-03-26 21:47:58 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Cargando dataset: data/raw/mental_health_tech_survey.csv
+2026-03-26 21:47:58 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Dataset cargado: 1259 filas, 27 columnas
+2026-03-26 21:47:58 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === EXTRACCIÓN COMPLETADA: 6259 registros totales ===
+2026-03-26 21:47:58 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Ejecutando validación de datasets...
+2026-03-26 21:47:58 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: remote_work_mental_health
+2026-03-26 21:47:58 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  col_Work_Location_sin_nulos
+  ✓ PASS  col_Mental_Health_Condition_sin_nulos
+  ✓ PASS  col_Age_sin_nulos
+  ✓ PASS  col_Gender_sin_nulos
+  ✓ PASS  edad_en_rango
+  ✓ PASS  horas_en_rango
+--------------------------------------------------
+Total: 9/9 validaciones pasadas
+2026-03-26 21:47:58 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: mental_health_tech_survey
+2026-03-26 21:47:58 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  generos_validos
+  ✗ FAIL  edad_en_rango
+--------------------------------------------------
+Total: 4/5 validaciones pasadas
+2026-03-26 21:47:58 | WARNING  | pipeline:etl.utils.validators:ejecutar_validacion | ✗ Algunos datasets fallaron validación
+2026-03-26 21:47:58 | WARNING  | pipeline:__main__:ejecutar_pipeline | Validación de datos: FALLIDA - continuando con precaución
+2026-03-26 21:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 1: EXTRACCIÓN
+2026-03-26 21:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | Datasets cargados exitosamente
+2026-03-26 21:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 2: TRANSFORMACIÓN
+2026-03-26 21:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:47:58 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | Construyendo dim_tiempo para el año 2024
+2026-03-26 21:47:58 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | dim_tiempo creada: 12 registros
+2026-03-26 21:47:58 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | Construyendo dim_trabajo
+2026-03-26 21:47:58 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | dim_trabajo creada: 861 registros
+2026-03-26 21:47:58 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | Construyendo dim_demografia
+2026-03-26 21:47:58 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | dim_demografia creada: 15 registros
+2026-03-26 21:47:58 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | Construyendo dim_soporte
+2026-03-26 21:47:58 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | dim_soporte creada: 5 registros
+2026-03-26 21:47:58 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | Construyendo fact_bienestar_laboral
+2026-03-26 21:47:59 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | fact_bienestar_laboral creada: 5000 registros
+2026-03-26 21:47:59 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:47:59 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 3: CARGA
+2026-03-26 21:47:59 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:48:02 | INFO     | pipeline:etl.utils.db_connector:obtener_engine | Conexión exitosa a PostgreSQL: localhost:5432/mental_health_db
+2026-03-26 21:48:02 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | === INICIANDO FASE DE CARGA ===
+2026-03-26 21:48:02 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_tiempo: 12 registros
+2026-03-26 21:48:02 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_tiempo.csv (12 filas)
+2026-03-26 21:48:02 | WARNING  | pipeline:__main__:ejecutar_pipeline | Error al conectar a PostgreSQL: (psycopg2.errors.UndefinedTable) relation "dim_tiempo" does not exist
+
+[SQL: TRUNCATE TABLE dim_tiempo RESTART IDENTITY CASCADE]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-03-26 21:48:02 | INFO     | pipeline:__main__:ejecutar_pipeline | Guardando datos solo como CSV
+2026-03-26 21:48:02 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_tiempo.csv (12 filas)
+2026-03-26 21:48:02 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_trabajo.csv (861 filas)
+2026-03-26 21:48:02 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_demografia.csv (15 filas)
+2026-03-26 21:48:02 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_soporte.csv (5 filas)
+2026-03-26 21:48:02 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/fact_bienestar_laboral.csv (5000 filas)
+2026-03-26 21:48:02 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:48:02 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:48:02 | INFO     | pipeline:__main__:ejecutar_pipeline | PIPELINE ETL COMPLETADO EXITOSAMENTE
+2026-03-26 21:48:02 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:48:02 | INFO     | pipeline:__main__:ejecutar_pipeline | Resumen:
+2026-03-26 21:48:02 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_tiempo: 12 registros
+2026-03-26 21:48:02 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_trabajo: 861 registros
+2026-03-26 21:48:02 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_demografia: 15 registros
+2026-03-26 21:48:02 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_soporte: 5 registros
+2026-03-26 21:48:02 | INFO     | pipeline:__main__:ejecutar_pipeline |   - fact_bienestar_laboral: 5000 registros
+2026-03-26 21:48:02 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:48:35 | INFO     | pipeline:etl.utils.logger_config:configurar_logger | Logger configurado para pipeline
+2026-03-26 21:48:35 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:48:35 | INFO     | pipeline:__main__:ejecutar_pipeline | INICIANDO PIPELINE ETL — SALUD MENTAL EN EL TRABAJO REMOTO
+2026-03-26 21:48:35 | INFO     | pipeline:__main__:ejecutar_pipeline | Fecha de ejecución: 2026-03-26 21:48:35
+2026-03-26 21:48:35 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:48:35 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:48:35 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 0: VALIDACIÓN DE DATOS
+2026-03-26 21:48:35 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:48:35 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === INICIANDO FASE DE EXTRACCIÓN ===
+2026-03-26 21:48:35 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Cargando dataset: data/raw/remote_work_mental_health.csv
+2026-03-26 21:48:35 | WARNING  | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Columnas faltantes en remote_work: {'Company_Size', 'Productivity', 'Employment_Status', 'Work_Life_Balance'}
+2026-03-26 21:48:35 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Dataset cargado: 5000 filas, 20 columnas
+2026-03-26 21:48:35 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Cargando dataset: data/raw/mental_health_tech_survey.csv
+2026-03-26 21:48:35 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Dataset cargado: 1259 filas, 27 columnas
+2026-03-26 21:48:35 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === EXTRACCIÓN COMPLETADA: 6259 registros totales ===
+2026-03-26 21:48:35 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Ejecutando validación de datasets...
+2026-03-26 21:48:35 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: remote_work_mental_health
+2026-03-26 21:48:35 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  col_Work_Location_sin_nulos
+  ✓ PASS  col_Mental_Health_Condition_sin_nulos
+  ✓ PASS  col_Age_sin_nulos
+  ✓ PASS  col_Gender_sin_nulos
+  ✓ PASS  edad_en_rango
+  ✓ PASS  horas_en_rango
+--------------------------------------------------
+Total: 9/9 validaciones pasadas
+2026-03-26 21:48:35 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: mental_health_tech_survey
+2026-03-26 21:48:35 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  generos_validos
+  ✗ FAIL  edad_en_rango
+--------------------------------------------------
+Total: 4/5 validaciones pasadas
+2026-03-26 21:48:35 | WARNING  | pipeline:etl.utils.validators:ejecutar_validacion | ✗ Algunos datasets fallaron validación
+2026-03-26 21:48:35 | WARNING  | pipeline:__main__:ejecutar_pipeline | Validación de datos: FALLIDA - continuando con precaución
+2026-03-26 21:48:35 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:48:35 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 1: EXTRACCIÓN
+2026-03-26 21:48:35 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:48:35 | INFO     | pipeline:__main__:ejecutar_pipeline | Datasets cargados exitosamente
+2026-03-26 21:48:35 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:48:35 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 2: TRANSFORMACIÓN
+2026-03-26 21:48:35 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:48:35 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | Construyendo dim_tiempo para el año 2024
+2026-03-26 21:48:35 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | dim_tiempo creada: 12 registros
+2026-03-26 21:48:35 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | Construyendo dim_trabajo
+2026-03-26 21:48:35 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | dim_trabajo creada: 861 registros
+2026-03-26 21:48:35 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | Construyendo dim_demografia
+2026-03-26 21:48:35 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | dim_demografia creada: 15 registros
+2026-03-26 21:48:35 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | Construyendo dim_soporte
+2026-03-26 21:48:35 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | dim_soporte creada: 5 registros
+2026-03-26 21:48:35 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | Construyendo fact_bienestar_laboral
+2026-03-26 21:48:36 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | fact_bienestar_laboral creada: 5000 registros
+2026-03-26 21:48:36 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:48:36 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 3: CARGA
+2026-03-26 21:48:36 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:48:36 | INFO     | pipeline:etl.utils.db_connector:obtener_engine | Conexión exitosa a PostgreSQL: localhost:5432/mental_health_db
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | === INICIANDO FASE DE CARGA ===
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_tiempo: 12 registros
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_tiempo.csv (12 filas)
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_tiempo
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_tiempo
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_trabajo: 861 registros
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_trabajo.csv (861 filas)
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_trabajo
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_trabajo
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_demografia: 15 registros
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_demografia.csv (15 filas)
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_demografia
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_demografia
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_soporte: 5 registros
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_soporte.csv (5 filas)
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_soporte
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_soporte
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando fact_bienestar_laboral: 5000 registros
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/fact_bienestar_laboral.csv (5000 filas)
+2026-03-26 21:48:36 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: fact_bienestar_laboral
+2026-03-26 21:48:37 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: fact_bienestar_laboral
+2026-03-26 21:48:37 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | === CARGA COMPLETADA ===
+2026-03-26 21:48:37 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:48:37 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:48:37 | INFO     | pipeline:__main__:ejecutar_pipeline | PIPELINE ETL COMPLETADO EXITOSAMENTE
+2026-03-26 21:48:37 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:48:37 | INFO     | pipeline:__main__:ejecutar_pipeline | Resumen:
+2026-03-26 21:48:37 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_tiempo: 12 registros
+2026-03-26 21:48:37 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_trabajo: 861 registros
+2026-03-26 21:48:37 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_demografia: 15 registros
+2026-03-26 21:48:37 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_soporte: 5 registros
+2026-03-26 21:48:37 | INFO     | pipeline:__main__:ejecutar_pipeline |   - fact_bienestar_laboral: 5000 registros
+2026-03-26 21:48:37 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:57:25 | INFO     | pipeline:etl.utils.logger_config:configurar_logger | Logger configurado para pipeline
+2026-03-26 21:57:25 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:57:25 | INFO     | pipeline:__main__:ejecutar_pipeline | INICIANDO PIPELINE ETL — SALUD MENTAL EN EL TRABAJO REMOTO
+2026-03-26 21:57:25 | INFO     | pipeline:__main__:ejecutar_pipeline | Fecha de ejecución: 2026-03-26 21:57:25
+2026-03-26 21:57:25 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:57:25 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:57:25 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 0: VALIDACIÓN DE DATOS
+2026-03-26 21:57:25 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:57:25 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === INICIANDO FASE DE EXTRACCIÓN ===
+2026-03-26 21:57:25 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Cargando dataset: data/raw/remote_work_mental_health.csv
+2026-03-26 21:57:25 | WARNING  | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Columnas faltantes en remote_work: {'Company_Size', 'Productivity', 'Employment_Status', 'Work_Life_Balance'}
+2026-03-26 21:57:25 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Dataset cargado: 5000 filas, 20 columnas
+2026-03-26 21:57:25 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Cargando dataset: data/raw/mental_health_tech_survey.csv
+2026-03-26 21:57:25 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Dataset cargado: 1259 filas, 27 columnas
+2026-03-26 21:57:25 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === EXTRACCIÓN COMPLETADA: 6259 registros totales ===
+2026-03-26 21:57:25 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Ejecutando validación de datasets...
+2026-03-26 21:57:25 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: remote_work_mental_health
+2026-03-26 21:57:25 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  col_Work_Location_sin_nulos
+  ✓ PASS  col_Mental_Health_Condition_sin_nulos
+  ✓ PASS  col_Age_sin_nulos
+  ✓ PASS  col_Gender_sin_nulos
+  ✓ PASS  edad_en_rango
+  ✓ PASS  horas_en_rango
+--------------------------------------------------
+Total: 9/9 validaciones pasadas
+2026-03-26 21:57:25 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: mental_health_tech_survey
+2026-03-26 21:57:25 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  generos_validos
+  ✗ FAIL  edad_en_rango
+--------------------------------------------------
+Total: 4/5 validaciones pasadas
+2026-03-26 21:57:25 | WARNING  | pipeline:etl.utils.validators:ejecutar_validacion | ✗ Algunos datasets fallaron validación
+2026-03-26 21:57:25 | WARNING  | pipeline:__main__:ejecutar_pipeline | Validación de datos: FALLIDA - continuando con precaución
+2026-03-26 21:57:25 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:57:25 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 1: EXTRACCIÓN
+2026-03-26 21:57:25 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:57:25 | INFO     | pipeline:__main__:ejecutar_pipeline | Datasets cargados exitosamente
+2026-03-26 21:57:25 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:57:25 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 2: TRANSFORMACIÓN
+2026-03-26 21:57:25 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:57:25 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | Construyendo dim_tiempo para el año 2024
+2026-03-26 21:57:25 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | dim_tiempo creada: 12 registros
+2026-03-26 21:57:25 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | Construyendo dim_trabajo
+2026-03-26 21:57:25 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | dim_trabajo creada: 861 registros
+2026-03-26 21:57:25 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | Construyendo dim_demografia
+2026-03-26 21:57:25 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | dim_demografia creada: 15 registros
+2026-03-26 21:57:25 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | Construyendo dim_soporte
+2026-03-26 21:57:25 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | dim_soporte creada: 5 registros
+2026-03-26 21:57:25 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | Construyendo fact_bienestar_laboral
+2026-03-26 21:57:26 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | fact_bienestar_laboral creada: 5000 registros
+2026-03-26 21:57:26 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:57:26 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 3: CARGA
+2026-03-26 21:57:26 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 21:57:26 | INFO     | pipeline:etl.utils.db_connector:obtener_engine | Conexión exitosa a PostgreSQL: localhost:5432/mental_health_db
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | === INICIANDO FASE DE CARGA ===
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_tiempo: 12 registros
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_tiempo.csv (12 filas)
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_tiempo
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_tiempo
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_trabajo: 861 registros
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_trabajo.csv (861 filas)
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_trabajo
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_trabajo
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_demografia: 15 registros
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_demografia.csv (15 filas)
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_demografia
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_demografia
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_soporte: 5 registros
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_soporte.csv (5 filas)
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_soporte
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_soporte
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando fact_bienestar_laboral: 5000 registros
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/fact_bienestar_laboral.csv (5000 filas)
+2026-03-26 21:57:26 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: fact_bienestar_laboral
+2026-03-26 21:57:27 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: fact_bienestar_laboral
+2026-03-26 21:57:27 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | === CARGA COMPLETADA ===
+2026-03-26 21:57:27 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 21:57:27 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:57:27 | INFO     | pipeline:__main__:ejecutar_pipeline | PIPELINE ETL COMPLETADO EXITOSAMENTE
+2026-03-26 21:57:27 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 21:57:27 | INFO     | pipeline:__main__:ejecutar_pipeline | Resumen:
+2026-03-26 21:57:27 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_tiempo: 12 registros
+2026-03-26 21:57:27 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_trabajo: 861 registros
+2026-03-26 21:57:27 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_demografia: 15 registros
+2026-03-26 21:57:27 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_soporte: 5 registros
+2026-03-26 21:57:27 | INFO     | pipeline:__main__:ejecutar_pipeline |   - fact_bienestar_laboral: 5000 registros
+2026-03-26 21:57:27 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:00:40 | INFO     | pipeline:etl.utils.logger_config:configurar_logger | Logger configurado para pipeline
+2026-03-26 22:00:40 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:00:40 | INFO     | pipeline:__main__:ejecutar_pipeline | INICIANDO PIPELINE ETL — SALUD MENTAL EN EL TRABAJO REMOTO
+2026-03-26 22:00:40 | INFO     | pipeline:__main__:ejecutar_pipeline | Fecha de ejecución: 2026-03-26 22:00:40
+2026-03-26 22:00:40 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:00:40 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:00:40 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 0: VALIDACIÓN DE DATOS
+2026-03-26 22:00:40 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:00:40 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === INICIANDO FASE DE EXTRACCIÓN ===
+2026-03-26 22:00:40 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Cargando dataset: data/raw/remote_work_mental_health.csv
+2026-03-26 22:00:40 | WARNING  | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Columnas faltantes en remote_work: {'Company_Size', 'Productivity', 'Work_Life_Balance', 'Employment_Status'}
+2026-03-26 22:00:40 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Dataset cargado: 5000 filas, 20 columnas
+2026-03-26 22:00:40 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Cargando dataset: data/raw/mental_health_tech_survey.csv
+2026-03-26 22:00:40 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Dataset cargado: 1259 filas, 27 columnas
+2026-03-26 22:00:40 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === EXTRACCIÓN COMPLETADA: 6259 registros totales ===
+2026-03-26 22:00:40 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Ejecutando validación de datasets...
+2026-03-26 22:00:40 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: remote_work_mental_health
+2026-03-26 22:00:40 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  col_Work_Location_sin_nulos
+  ✓ PASS  col_Mental_Health_Condition_sin_nulos
+  ✓ PASS  col_Age_sin_nulos
+  ✓ PASS  col_Gender_sin_nulos
+  ✓ PASS  edad_en_rango
+  ✓ PASS  horas_en_rango
+--------------------------------------------------
+Total: 9/9 validaciones pasadas
+2026-03-26 22:00:40 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: mental_health_tech_survey
+2026-03-26 22:00:40 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  generos_validos
+  ✗ FAIL  edad_en_rango
+--------------------------------------------------
+Total: 4/5 validaciones pasadas
+2026-03-26 22:00:40 | WARNING  | pipeline:etl.utils.validators:ejecutar_validacion | ✗ Algunos datasets fallaron validación
+2026-03-26 22:00:40 | WARNING  | pipeline:__main__:ejecutar_pipeline | Validación de datos: FALLIDA - continuando con precaución
+2026-03-26 22:00:40 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:00:40 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 1: EXTRACCIÓN
+2026-03-26 22:00:40 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:00:40 | INFO     | pipeline:__main__:ejecutar_pipeline | Datasets cargados exitosamente
+2026-03-26 22:00:40 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:00:40 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 2: TRANSFORMACIÓN
+2026-03-26 22:00:40 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:00:40 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | Construyendo dim_tiempo para el año 2024
+2026-03-26 22:00:40 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | dim_tiempo creada: 12 registros
+2026-03-26 22:00:40 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | Construyendo dim_trabajo
+2026-03-26 22:00:40 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | dim_trabajo creada: 861 registros
+2026-03-26 22:00:40 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | Construyendo dim_demografia
+2026-03-26 22:00:40 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | dim_demografia creada: 15 registros
+2026-03-26 22:00:40 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | Construyendo dim_soporte
+2026-03-26 22:00:40 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | dim_soporte creada: 5 registros
+2026-03-26 22:00:40 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | Construyendo fact_bienestar_laboral
+2026-03-26 22:00:42 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | fact_bienestar_laboral creada: 5000 registros
+2026-03-26 22:00:42 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:00:42 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 3: CARGA
+2026-03-26 22:00:42 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:00:42 | INFO     | pipeline:etl.utils.db_connector:obtener_engine | Conexión exitosa a PostgreSQL: localhost:5432/mental_health_db
+2026-03-26 22:00:42 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | === INICIANDO FASE DE CARGA ===
+2026-03-26 22:00:42 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_tiempo: 12 registros
+2026-03-26 22:00:42 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_tiempo.csv (12 filas)
+2026-03-26 22:00:42 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_tiempo
+2026-03-26 22:00:42 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_tiempo
+2026-03-26 22:00:42 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_trabajo: 861 registros
+2026-03-26 22:00:42 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_trabajo.csv (861 filas)
+2026-03-26 22:00:42 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_trabajo
+2026-03-26 22:00:42 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_trabajo
+2026-03-26 22:00:42 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_demografia: 15 registros
+2026-03-26 22:00:42 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_demografia.csv (15 filas)
+2026-03-26 22:00:42 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_demografia
+2026-03-26 22:00:42 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_demografia
+2026-03-26 22:00:42 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_soporte: 5 registros
+2026-03-26 22:00:42 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_soporte.csv (5 filas)
+2026-03-26 22:00:43 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_soporte
+2026-03-26 22:00:43 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_soporte
+2026-03-26 22:00:43 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando fact_bienestar_laboral: 5000 registros
+2026-03-26 22:00:43 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/fact_bienestar_laboral.csv (5000 filas)
+2026-03-26 22:00:43 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: fact_bienestar_laboral
+2026-03-26 22:00:43 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: fact_bienestar_laboral
+2026-03-26 22:00:43 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | === CARGA COMPLETADA ===
+2026-03-26 22:00:43 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:00:43 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:00:43 | INFO     | pipeline:__main__:ejecutar_pipeline | PIPELINE ETL COMPLETADO EXITOSAMENTE
+2026-03-26 22:00:43 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:00:43 | INFO     | pipeline:__main__:ejecutar_pipeline | Resumen:
+2026-03-26 22:00:43 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_tiempo: 12 registros
+2026-03-26 22:00:43 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_trabajo: 861 registros
+2026-03-26 22:00:43 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_demografia: 15 registros
+2026-03-26 22:00:43 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_soporte: 5 registros
+2026-03-26 22:00:43 | INFO     | pipeline:__main__:ejecutar_pipeline |   - fact_bienestar_laboral: 5000 registros
+2026-03-26 22:00:43 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:03:00 | INFO     | pipeline:etl.utils.logger_config:configurar_logger | Logger configurado para pipeline
+2026-03-26 22:03:00 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:03:00 | INFO     | pipeline:__main__:ejecutar_pipeline | INICIANDO PIPELINE ETL — SALUD MENTAL EN EL TRABAJO REMOTO
+2026-03-26 22:03:00 | INFO     | pipeline:__main__:ejecutar_pipeline | Fecha de ejecución: 2026-03-26 22:03:00
+2026-03-26 22:03:00 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:03:00 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:03:00 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 0: VALIDACIÓN DE DATOS
+2026-03-26 22:03:00 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:03:00 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === INICIANDO FASE DE EXTRACCIÓN ===
+2026-03-26 22:03:00 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Cargando dataset: data/raw/remote_work_mental_health.csv
+2026-03-26 22:03:00 | WARNING  | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Columnas faltantes en remote_work: {'Employment_Status', 'Company_Size', 'Productivity', 'Work_Life_Balance'}
+2026-03-26 22:03:00 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Dataset cargado: 5000 filas, 20 columnas
+2026-03-26 22:03:00 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Cargando dataset: data/raw/mental_health_tech_survey.csv
+2026-03-26 22:03:00 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Dataset cargado: 1259 filas, 27 columnas
+2026-03-26 22:03:00 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === EXTRACCIÓN COMPLETADA: 6259 registros totales ===
+2026-03-26 22:03:00 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Ejecutando validación de datasets...
+2026-03-26 22:03:00 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: remote_work_mental_health
+2026-03-26 22:03:00 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  col_Work_Location_sin_nulos
+  ✓ PASS  col_Mental_Health_Condition_sin_nulos
+  ✓ PASS  col_Age_sin_nulos
+  ✓ PASS  col_Gender_sin_nulos
+  ✓ PASS  edad_en_rango
+  ✓ PASS  horas_en_rango
+--------------------------------------------------
+Total: 9/9 validaciones pasadas
+2026-03-26 22:03:00 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: mental_health_tech_survey
+2026-03-26 22:03:00 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  generos_validos
+  ✗ FAIL  edad_en_rango
+--------------------------------------------------
+Total: 4/5 validaciones pasadas
+2026-03-26 22:03:00 | WARNING  | pipeline:etl.utils.validators:ejecutar_validacion | ✗ Algunos datasets fallaron validación
+2026-03-26 22:03:00 | WARNING  | pipeline:__main__:ejecutar_pipeline | Validación de datos: FALLIDA - continuando con precaución
+2026-03-26 22:03:00 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:03:00 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 1: EXTRACCIÓN
+2026-03-26 22:03:00 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:03:00 | INFO     | pipeline:__main__:ejecutar_pipeline | Datasets cargados exitosamente
+2026-03-26 22:03:00 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:03:00 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 2: TRANSFORMACIÓN
+2026-03-26 22:03:00 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:03:00 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | Construyendo dim_tiempo para el año 2024
+2026-03-26 22:03:00 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | dim_tiempo creada: 12 registros
+2026-03-26 22:03:00 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | Construyendo dim_trabajo
+2026-03-26 22:03:00 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | dim_trabajo creada: 861 registros
+2026-03-26 22:03:00 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | Construyendo dim_demografia
+2026-03-26 22:03:00 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | dim_demografia creada: 15 registros
+2026-03-26 22:03:00 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | Construyendo dim_soporte
+2026-03-26 22:03:00 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | dim_soporte creada: 5 registros
+2026-03-26 22:03:00 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | Construyendo fact_bienestar_laboral
+2026-03-26 22:03:05 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | fact_bienestar_laboral creada: 5000 registros
+2026-03-26 22:03:05 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:03:05 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 3: CARGA
+2026-03-26 22:03:05 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:03:05 | INFO     | pipeline:etl.utils.db_connector:obtener_engine | Conexión exitosa a PostgreSQL: localhost:5432/mental_health_db
+2026-03-26 22:03:05 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | === INICIANDO FASE DE CARGA ===
+2026-03-26 22:03:05 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_tiempo: 12 registros
+2026-03-26 22:03:05 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_tiempo.csv (12 filas)
+2026-03-26 22:03:05 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_tiempo
+2026-03-26 22:03:05 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_tiempo
+2026-03-26 22:03:05 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_trabajo: 861 registros
+2026-03-26 22:03:05 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_trabajo.csv (861 filas)
+2026-03-26 22:03:05 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_trabajo
+2026-03-26 22:03:06 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_trabajo
+2026-03-26 22:03:06 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_demografia: 15 registros
+2026-03-26 22:03:06 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_demografia.csv (15 filas)
+2026-03-26 22:03:06 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_demografia
+2026-03-26 22:03:06 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_demografia
+2026-03-26 22:03:06 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_soporte: 5 registros
+2026-03-26 22:03:06 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_soporte.csv (5 filas)
+2026-03-26 22:03:06 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_soporte
+2026-03-26 22:03:06 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_soporte
+2026-03-26 22:03:06 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando fact_bienestar_laboral: 5000 registros
+2026-03-26 22:03:06 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/fact_bienestar_laboral.csv (5000 filas)
+2026-03-26 22:03:06 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: fact_bienestar_laboral
+2026-03-26 22:03:07 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: fact_bienestar_laboral
+2026-03-26 22:03:07 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | === CARGA COMPLETADA ===
+2026-03-26 22:03:07 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:03:07 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:03:07 | INFO     | pipeline:__main__:ejecutar_pipeline | PIPELINE ETL COMPLETADO EXITOSAMENTE
+2026-03-26 22:03:07 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:03:07 | INFO     | pipeline:__main__:ejecutar_pipeline | Resumen:
+2026-03-26 22:03:07 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_tiempo: 12 registros
+2026-03-26 22:03:07 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_trabajo: 861 registros
+2026-03-26 22:03:07 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_demografia: 15 registros
+2026-03-26 22:03:07 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_soporte: 5 registros
+2026-03-26 22:03:07 | INFO     | pipeline:__main__:ejecutar_pipeline |   - fact_bienestar_laboral: 5000 registros
+2026-03-26 22:03:07 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:28:04 | INFO     | pipeline:etl.utils.logger_config:configurar_logger | Logger configurado para pipeline
+2026-03-26 22:28:04 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:28:04 | INFO     | pipeline:__main__:ejecutar_pipeline | INICIANDO PIPELINE ETL — SALUD MENTAL EN EL TRABAJO REMOTO
+2026-03-26 22:28:04 | INFO     | pipeline:__main__:ejecutar_pipeline | Fecha de ejecución: 2026-03-26 22:28:04
+2026-03-26 22:28:04 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:28:04 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:28:04 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 0: VALIDACIÓN DE DATOS
+2026-03-26 22:28:04 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:28:04 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === INICIANDO FASE DE EXTRACCIÓN ===
+2026-03-26 22:28:04 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Cargando dataset: data/raw/remote_work_mental_health.csv
+2026-03-26 22:28:04 | WARNING  | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Columnas faltantes en remote_work: {'Work_Life_Balance', 'Productivity', 'Employment_Status', 'Company_Size'}
+2026-03-26 22:28:04 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Dataset cargado: 5000 filas, 20 columnas
+2026-03-26 22:28:04 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Cargando dataset: data/raw/mental_health_tech_survey.csv
+2026-03-26 22:28:04 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Dataset cargado: 1259 filas, 27 columnas
+2026-03-26 22:28:04 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === EXTRACCIÓN COMPLETADA: 6259 registros totales ===
+2026-03-26 22:28:04 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Ejecutando validación de datasets...
+2026-03-26 22:28:04 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: remote_work_mental_health
+2026-03-26 22:28:04 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  col_Work_Location_sin_nulos
+  ✓ PASS  col_Mental_Health_Condition_sin_nulos
+  ✓ PASS  col_Age_sin_nulos
+  ✓ PASS  col_Gender_sin_nulos
+  ✓ PASS  edad_en_rango
+  ✓ PASS  horas_en_rango
+--------------------------------------------------
+Total: 9/9 validaciones pasadas
+2026-03-26 22:28:04 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: mental_health_tech_survey
+2026-03-26 22:28:04 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  generos_validos
+  ✗ FAIL  edad_en_rango
+--------------------------------------------------
+Total: 4/5 validaciones pasadas
+2026-03-26 22:28:04 | WARNING  | pipeline:etl.utils.validators:ejecutar_validacion | ✗ Algunos datasets fallaron validación
+2026-03-26 22:28:04 | WARNING  | pipeline:__main__:ejecutar_pipeline | Validación de datos: FALLIDA - continuando con precaución
+2026-03-26 22:28:04 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:28:04 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 1: EXTRACCIÓN
+2026-03-26 22:28:04 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:28:04 | INFO     | pipeline:__main__:ejecutar_pipeline | Datasets cargados exitosamente
+2026-03-26 22:28:04 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:28:04 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 2: TRANSFORMACIÓN
+2026-03-26 22:28:04 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:28:04 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | Construyendo dim_tiempo para el año 2024
+2026-03-26 22:28:04 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | dim_tiempo creada: 12 registros
+2026-03-26 22:28:04 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | Construyendo dim_trabajo
+2026-03-26 22:28:04 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | dim_trabajo creada: 861 registros
+2026-03-26 22:28:04 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | Construyendo dim_demografia
+2026-03-26 22:28:04 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | dim_demografia creada: 15 registros
+2026-03-26 22:28:04 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | Construyendo dim_soporte
+2026-03-26 22:28:04 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | dim_soporte creada: 5 registros
+2026-03-26 22:28:04 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | Construyendo fact_bienestar_laboral
+2026-03-26 22:30:20 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | fact_bienestar_laboral creada: 5000 registros
+2026-03-26 22:30:20 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:30:20 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 3: CARGA
+2026-03-26 22:30:20 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:30:20 | INFO     | pipeline:etl.utils.db_connector:obtener_engine | Conexión exitosa a PostgreSQL: localhost:5432/mental_health_db
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | === INICIANDO FASE DE CARGA ===
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_tiempo: 12 registros
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_tiempo.csv (12 filas)
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_tiempo
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_tiempo
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_trabajo: 861 registros
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_trabajo.csv (861 filas)
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_trabajo
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_trabajo
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_demografia: 15 registros
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_demografia.csv (15 filas)
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_demografia
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_demografia
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_soporte: 5 registros
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_soporte.csv (5 filas)
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_soporte
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_soporte
+2026-03-26 22:30:20 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando fact_bienestar_laboral: 5000 registros
+2026-03-26 22:30:21 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/fact_bienestar_laboral.csv (5000 filas)
+2026-03-26 22:30:21 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: fact_bienestar_laboral
+2026-03-26 22:30:21 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: fact_bienestar_laboral
+2026-03-26 22:30:21 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | === CARGA COMPLETADA ===
+2026-03-26 22:30:21 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:30:21 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:30:21 | INFO     | pipeline:__main__:ejecutar_pipeline | PIPELINE ETL COMPLETADO EXITOSAMENTE
+2026-03-26 22:30:21 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:30:21 | INFO     | pipeline:__main__:ejecutar_pipeline | Resumen:
+2026-03-26 22:30:21 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_tiempo: 12 registros
+2026-03-26 22:30:21 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_trabajo: 861 registros
+2026-03-26 22:30:21 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_demografia: 15 registros
+2026-03-26 22:30:21 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_soporte: 5 registros
+2026-03-26 22:30:21 | INFO     | pipeline:__main__:ejecutar_pipeline |   - fact_bienestar_laboral: 5000 registros
+2026-03-26 22:30:21 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:40:37 | INFO     | pipeline:etl.utils.logger_config:configurar_logger | Logger configurado para pipeline
+2026-03-26 22:40:37 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:40:37 | INFO     | pipeline:__main__:ejecutar_pipeline | INICIANDO PIPELINE ETL — SALUD MENTAL EN EL TRABAJO REMOTO
+2026-03-26 22:40:37 | INFO     | pipeline:__main__:ejecutar_pipeline | Fecha de ejecución: 2026-03-26 22:40:37
+2026-03-26 22:40:37 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:40:37 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:40:37 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 0: VALIDACIÓN DE DATOS
+2026-03-26 22:40:37 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:40:37 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === INICIANDO FASE DE EXTRACCIÓN ===
+2026-03-26 22:40:37 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Cargando dataset: data/raw/remote_work_mental_health.csv
+2026-03-26 22:40:37 | WARNING  | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Columnas faltantes en remote_work: {'Company_Size', 'Employment_Status', 'Productivity', 'Work_Life_Balance'}
+2026-03-26 22:40:37 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Dataset cargado: 5000 filas, 20 columnas
+2026-03-26 22:40:37 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Cargando dataset: data/raw/mental_health_tech_survey.csv
+2026-03-26 22:40:37 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Dataset cargado: 1259 filas, 27 columnas
+2026-03-26 22:40:37 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === EXTRACCIÓN COMPLETADA: 6259 registros totales ===
+2026-03-26 22:40:37 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Ejecutando validación de datasets...
+2026-03-26 22:40:37 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: remote_work_mental_health
+2026-03-26 22:40:37 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  col_Work_Location_sin_nulos
+  ✓ PASS  col_Mental_Health_Condition_sin_nulos
+  ✓ PASS  col_Age_sin_nulos
+  ✓ PASS  col_Gender_sin_nulos
+  ✓ PASS  edad_en_rango
+  ✓ PASS  horas_en_rango
+--------------------------------------------------
+Total: 9/9 validaciones pasadas
+2026-03-26 22:40:37 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: mental_health_tech_survey
+2026-03-26 22:40:37 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  generos_validos
+  ✗ FAIL  edad_en_rango
+--------------------------------------------------
+Total: 4/5 validaciones pasadas
+2026-03-26 22:40:37 | WARNING  | pipeline:etl.utils.validators:ejecutar_validacion | ✗ Algunos datasets fallaron validación
+2026-03-26 22:40:37 | WARNING  | pipeline:__main__:ejecutar_pipeline | Validación de datos: FALLIDA - continuando con precaución
+2026-03-26 22:40:37 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:40:37 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 1: EXTRACCIÓN
+2026-03-26 22:40:37 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:40:37 | INFO     | pipeline:__main__:ejecutar_pipeline | Datasets cargados exitosamente
+2026-03-26 22:40:37 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:40:37 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 2: TRANSFORMACIÓN
+2026-03-26 22:40:37 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:40:37 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | Construyendo dim_tiempo para el año 2024
+2026-03-26 22:40:37 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | dim_tiempo creada: 12 registros
+2026-03-26 22:40:37 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | Construyendo dim_trabajo
+2026-03-26 22:40:37 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | dim_trabajo creada: 861 registros
+2026-03-26 22:40:37 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | Construyendo dim_demografia
+2026-03-26 22:40:37 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | dim_demografia creada: 90 registros
+2026-03-26 22:40:37 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | Construyendo dim_soporte
+2026-03-26 22:40:37 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | dim_soporte creada: 5 registros
+2026-03-26 22:40:37 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | Construyendo fact_bienestar_laboral
+2026-03-26 22:44:06 | INFO     | pipeline:etl.utils.logger_config:configurar_logger | Logger configurado para pipeline
+2026-03-26 22:44:06 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:44:06 | INFO     | pipeline:__main__:ejecutar_pipeline | INICIANDO PIPELINE ETL — SALUD MENTAL EN EL TRABAJO REMOTO
+2026-03-26 22:44:06 | INFO     | pipeline:__main__:ejecutar_pipeline | Fecha de ejecución: 2026-03-26 22:44:06
+2026-03-26 22:44:06 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:44:06 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:44:06 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 0: VALIDACIÓN DE DATOS
+2026-03-26 22:44:06 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:44:06 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === INICIANDO FASE DE EXTRACCIÓN ===
+2026-03-26 22:44:06 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Cargando dataset: data/raw/remote_work_mental_health.csv
+2026-03-26 22:44:06 | WARNING  | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Columnas faltantes en remote_work: {'Productivity', 'Company_Size', 'Employment_Status', 'Work_Life_Balance'}
+2026-03-26 22:44:06 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Dataset cargado: 5000 filas, 20 columnas
+2026-03-26 22:44:06 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Cargando dataset: data/raw/mental_health_tech_survey.csv
+2026-03-26 22:44:06 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Dataset cargado: 1259 filas, 27 columnas
+2026-03-26 22:44:06 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === EXTRACCIÓN COMPLETADA: 6259 registros totales ===
+2026-03-26 22:44:06 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Ejecutando validación de datasets...
+2026-03-26 22:44:06 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: remote_work_mental_health
+2026-03-26 22:44:06 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  col_Work_Location_sin_nulos
+  ✓ PASS  col_Mental_Health_Condition_sin_nulos
+  ✓ PASS  col_Age_sin_nulos
+  ✓ PASS  col_Gender_sin_nulos
+  ✓ PASS  edad_en_rango
+  ✓ PASS  horas_en_rango
+--------------------------------------------------
+Total: 9/9 validaciones pasadas
+2026-03-26 22:44:06 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: mental_health_tech_survey
+2026-03-26 22:44:06 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  generos_validos
+  ✗ FAIL  edad_en_rango
+--------------------------------------------------
+Total: 4/5 validaciones pasadas
+2026-03-26 22:44:06 | WARNING  | pipeline:etl.utils.validators:ejecutar_validacion | ✗ Algunos datasets fallaron validación
+2026-03-26 22:44:06 | WARNING  | pipeline:__main__:ejecutar_pipeline | Validación de datos: FALLIDA - continuando con precaución
+2026-03-26 22:44:06 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:44:06 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 1: EXTRACCIÓN
+2026-03-26 22:44:06 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:44:06 | INFO     | pipeline:__main__:ejecutar_pipeline | Datasets cargados exitosamente
+2026-03-26 22:44:06 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:44:06 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 2: TRANSFORMACIÓN
+2026-03-26 22:44:06 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:44:06 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | Construyendo dim_tiempo para el año 2024
+2026-03-26 22:44:06 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | dim_tiempo creada: 12 registros
+2026-03-26 22:44:06 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | Construyendo dim_trabajo
+2026-03-26 22:44:06 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | dim_trabajo creada: 861 registros
+2026-03-26 22:44:06 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | Construyendo dim_demografia
+2026-03-26 22:44:06 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | dim_demografia creada: 90 registros
+2026-03-26 22:44:06 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | Construyendo dim_soporte
+2026-03-26 22:44:06 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | dim_soporte creada: 5 registros
+2026-03-26 22:44:06 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | Construyendo fact_bienestar_laboral
+2026-03-26 22:47:58 | INFO     | pipeline:etl.utils.logger_config:configurar_logger | Logger configurado para pipeline
+2026-03-26 22:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | INICIANDO PIPELINE ETL — SALUD MENTAL EN EL TRABAJO REMOTO
+2026-03-26 22:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | Fecha de ejecución: 2026-03-26 22:47:58
+2026-03-26 22:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 0: VALIDACIÓN DE DATOS
+2026-03-26 22:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:47:58 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === INICIANDO FASE DE EXTRACCIÓN ===
+2026-03-26 22:47:58 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Cargando dataset: data/raw/remote_work_mental_health.csv
+2026-03-26 22:47:58 | WARNING  | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Columnas faltantes en remote_work: {'Work_Life_Balance', 'Company_Size', 'Productivity', 'Employment_Status'}
+2026-03-26 22:47:58 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Dataset cargado: 5000 filas, 20 columnas
+2026-03-26 22:47:58 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Cargando dataset: data/raw/mental_health_tech_survey.csv
+2026-03-26 22:47:58 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Dataset cargado: 1259 filas, 27 columnas
+2026-03-26 22:47:58 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === EXTRACCIÓN COMPLETADA: 6259 registros totales ===
+2026-03-26 22:47:58 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Ejecutando validación de datasets...
+2026-03-26 22:47:58 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: remote_work_mental_health
+2026-03-26 22:47:58 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  col_Work_Location_sin_nulos
+  ✓ PASS  col_Mental_Health_Condition_sin_nulos
+  ✓ PASS  col_Age_sin_nulos
+  ✓ PASS  col_Gender_sin_nulos
+  ✓ PASS  edad_en_rango
+  ✓ PASS  horas_en_rango
+--------------------------------------------------
+Total: 9/9 validaciones pasadas
+2026-03-26 22:47:58 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: mental_health_tech_survey
+2026-03-26 22:47:58 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  generos_validos
+  ✗ FAIL  edad_en_rango
+--------------------------------------------------
+Total: 4/5 validaciones pasadas
+2026-03-26 22:47:58 | WARNING  | pipeline:etl.utils.validators:ejecutar_validacion | ✗ Algunos datasets fallaron validación
+2026-03-26 22:47:58 | WARNING  | pipeline:__main__:ejecutar_pipeline | Validación de datos: FALLIDA - continuando con precaución
+2026-03-26 22:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 1: EXTRACCIÓN
+2026-03-26 22:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | Datasets cargados exitosamente
+2026-03-26 22:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 2: TRANSFORMACIÓN
+2026-03-26 22:47:58 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:47:58 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | Construyendo dim_tiempo para el año 2024
+2026-03-26 22:47:58 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | dim_tiempo creada: 12 registros
+2026-03-26 22:47:58 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | Construyendo dim_trabajo
+2026-03-26 22:47:58 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | dim_trabajo creada: 861 registros
+2026-03-26 22:47:58 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | Construyendo dim_demografia
+2026-03-26 22:47:58 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | dim_demografia creada: 90 registros
+2026-03-26 22:47:58 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | Construyendo dim_soporte
+2026-03-26 22:47:58 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | dim_soporte creada: 5 registros
+2026-03-26 22:47:58 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | Construyendo fact_bienestar_laboral
+2026-03-26 22:52:29 | INFO     | pipeline:etl.utils.logger_config:configurar_logger | Logger configurado para pipeline
+2026-03-26 22:52:29 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:52:29 | INFO     | pipeline:__main__:ejecutar_pipeline | INICIANDO PIPELINE ETL — SALUD MENTAL EN EL TRABAJO REMOTO
+2026-03-26 22:52:29 | INFO     | pipeline:__main__:ejecutar_pipeline | Fecha de ejecución: 2026-03-26 22:52:29
+2026-03-26 22:52:29 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:52:29 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:52:29 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 0: VALIDACIÓN DE DATOS
+2026-03-26 22:52:29 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:52:29 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === INICIANDO FASE DE EXTRACCIÓN ===
+2026-03-26 22:52:29 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Cargando dataset: data/raw/remote_work_mental_health.csv
+2026-03-26 22:52:29 | WARNING  | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Columnas faltantes en remote_work: {'Work_Life_Balance', 'Company_Size', 'Employment_Status', 'Productivity'}
+2026-03-26 22:52:29 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Dataset cargado: 5000 filas, 20 columnas
+2026-03-26 22:52:29 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Cargando dataset: data/raw/mental_health_tech_survey.csv
+2026-03-26 22:52:29 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Dataset cargado: 1259 filas, 27 columnas
+2026-03-26 22:52:29 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === EXTRACCIÓN COMPLETADA: 6259 registros totales ===
+2026-03-26 22:52:29 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Ejecutando validación de datasets...
+2026-03-26 22:52:29 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: remote_work_mental_health
+2026-03-26 22:52:29 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  col_Work_Location_sin_nulos
+  ✓ PASS  col_Mental_Health_Condition_sin_nulos
+  ✓ PASS  col_Age_sin_nulos
+  ✓ PASS  col_Gender_sin_nulos
+  ✓ PASS  edad_en_rango
+  ✓ PASS  horas_en_rango
+--------------------------------------------------
+Total: 9/9 validaciones pasadas
+2026-03-26 22:52:29 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: mental_health_tech_survey
+2026-03-26 22:52:29 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  generos_validos
+  ✗ FAIL  edad_en_rango
+--------------------------------------------------
+Total: 4/5 validaciones pasadas
+2026-03-26 22:52:29 | WARNING  | pipeline:etl.utils.validators:ejecutar_validacion | ✗ Algunos datasets fallaron validación
+2026-03-26 22:52:29 | WARNING  | pipeline:__main__:ejecutar_pipeline | Validación de datos: FALLIDA - continuando con precaución
+2026-03-26 22:52:29 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:52:29 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 1: EXTRACCIÓN
+2026-03-26 22:52:29 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:52:29 | INFO     | pipeline:__main__:ejecutar_pipeline | Datasets cargados exitosamente
+2026-03-26 22:52:29 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:52:29 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 2: TRANSFORMACIÓN
+2026-03-26 22:52:29 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:52:29 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | Construyendo dim_tiempo para el año 2024
+2026-03-26 22:52:29 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | dim_tiempo creada: 12 registros
+2026-03-26 22:52:29 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | Construyendo dim_trabajo
+2026-03-26 22:52:29 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | dim_trabajo creada: 861 registros
+2026-03-26 22:52:29 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | Construyendo dim_demografia
+2026-03-26 22:52:29 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | dim_demografia creada: 90 registros
+2026-03-26 22:52:29 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | Construyendo dim_soporte
+2026-03-26 22:52:29 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | dim_soporte creada: 5 registros
+2026-03-26 22:52:29 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | Construyendo fact_bienestar_laboral
+2026-03-26 22:56:11 | INFO     | pipeline:etl.utils.logger_config:configurar_logger | Logger configurado para pipeline
+2026-03-26 22:56:11 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:56:11 | INFO     | pipeline:__main__:ejecutar_pipeline | INICIANDO PIPELINE ETL — SALUD MENTAL EN EL TRABAJO REMOTO
+2026-03-26 22:56:11 | INFO     | pipeline:__main__:ejecutar_pipeline | Fecha de ejecución: 2026-03-26 22:56:11
+2026-03-26 22:56:11 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:56:11 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:56:11 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 0: VALIDACIÓN DE DATOS
+2026-03-26 22:56:11 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:56:11 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === INICIANDO FASE DE EXTRACCIÓN ===
+2026-03-26 22:56:11 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Cargando dataset: data/raw/remote_work_mental_health.csv
+2026-03-26 22:56:12 | WARNING  | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Columnas faltantes en remote_work: {'Employment_Status', 'Productivity', 'Work_Life_Balance', 'Company_Size'}
+2026-03-26 22:56:12 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Dataset cargado: 5000 filas, 20 columnas
+2026-03-26 22:56:12 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Cargando dataset: data/raw/mental_health_tech_survey.csv
+2026-03-26 22:56:12 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Dataset cargado: 1259 filas, 27 columnas
+2026-03-26 22:56:12 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === EXTRACCIÓN COMPLETADA: 6259 registros totales ===
+2026-03-26 22:56:12 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Ejecutando validación de datasets...
+2026-03-26 22:56:12 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: remote_work_mental_health
+2026-03-26 22:56:12 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  col_Work_Location_sin_nulos
+  ✓ PASS  col_Mental_Health_Condition_sin_nulos
+  ✓ PASS  col_Age_sin_nulos
+  ✓ PASS  col_Gender_sin_nulos
+  ✓ PASS  edad_en_rango
+  ✓ PASS  horas_en_rango
+--------------------------------------------------
+Total: 9/9 validaciones pasadas
+2026-03-26 22:56:12 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: mental_health_tech_survey
+2026-03-26 22:56:12 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  generos_validos
+  ✗ FAIL  edad_en_rango
+--------------------------------------------------
+Total: 4/5 validaciones pasadas
+2026-03-26 22:56:12 | WARNING  | pipeline:etl.utils.validators:ejecutar_validacion | ✗ Algunos datasets fallaron validación
+2026-03-26 22:56:12 | WARNING  | pipeline:__main__:ejecutar_pipeline | Validación de datos: FALLIDA - continuando con precaución
+2026-03-26 22:56:12 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:56:12 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 1: EXTRACCIÓN
+2026-03-26 22:56:12 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:56:12 | INFO     | pipeline:__main__:ejecutar_pipeline | Datasets cargados exitosamente
+2026-03-26 22:56:12 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:56:12 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 2: TRANSFORMACIÓN
+2026-03-26 22:56:12 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:56:12 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | Construyendo dim_tiempo para el año 2024
+2026-03-26 22:56:12 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | dim_tiempo creada: 12 registros
+2026-03-26 22:56:12 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | Construyendo dim_trabajo
+2026-03-26 22:56:12 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | dim_trabajo creada: 861 registros
+2026-03-26 22:56:12 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | Construyendo dim_demografia
+2026-03-26 22:56:12 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | dim_demografia creada: 90 registros
+2026-03-26 22:56:12 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | Construyendo dim_soporte
+2026-03-26 22:56:12 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | dim_soporte creada: 5 registros
+2026-03-26 22:56:12 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | Construyendo fact_bienestar_laboral
+2026-03-26 22:58:53 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | fact_bienestar_laboral creada: 5000 registros
+2026-03-26 22:58:53 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:58:53 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 3: CARGA
+2026-03-26 22:58:53 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:58:53 | INFO     | pipeline:etl.utils.db_connector:obtener_engine | Conexión exitosa a PostgreSQL: localhost:5432/mental_health_db
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | === INICIANDO FASE DE CARGA ===
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_tiempo: 12 registros
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_tiempo.csv (12 filas)
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_tiempo
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_tiempo
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_trabajo: 861 registros
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_trabajo.csv (861 filas)
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_trabajo
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_trabajo
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_demografia: 90 registros
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_demografia.csv (90 filas)
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_demografia
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_demografia
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando dim_soporte: 5 registros
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/dim_soporte.csv (5 filas)
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: dim_soporte
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: dim_soporte
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Cargando fact_bienestar_laboral: 5000 registros
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:guardar_csv_procesado | CSV guardado: data/processed/fact_bienestar_laboral.csv (5000 filas)
+2026-03-26 22:58:53 | INFO     | pipeline:etl.load.load_to_postgres:_truncar_tabla | Tabla truncada: fact_bienestar_laboral
+2026-03-26 22:58:54 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | Carga completada: fact_bienestar_laboral
+2026-03-26 22:58:54 | INFO     | pipeline:etl.load.load_to_postgres:cargar_a_postgres | === CARGA COMPLETADA ===
+2026-03-26 22:58:54 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:58:54 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:58:54 | INFO     | pipeline:__main__:ejecutar_pipeline | PIPELINE ETL COMPLETADO EXITOSAMENTE
+2026-03-26 22:58:54 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:58:54 | INFO     | pipeline:__main__:ejecutar_pipeline | Resumen:
+2026-03-26 22:58:54 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_tiempo: 12 registros
+2026-03-26 22:58:54 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_trabajo: 861 registros
+2026-03-26 22:58:54 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_demografia: 90 registros
+2026-03-26 22:58:54 | INFO     | pipeline:__main__:ejecutar_pipeline |   - dim_soporte: 5 registros
+2026-03-26 22:58:54 | INFO     | pipeline:__main__:ejecutar_pipeline |   - fact_bienestar_laboral: 5000 registros
+2026-03-26 22:58:54 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:59:46 | INFO     | pipeline:etl.utils.logger_config:configurar_logger | Logger configurado para pipeline
+2026-03-26 22:59:46 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:59:46 | INFO     | pipeline:__main__:ejecutar_pipeline | INICIANDO PIPELINE ETL — SALUD MENTAL EN EL TRABAJO REMOTO
+2026-03-26 22:59:46 | INFO     | pipeline:__main__:ejecutar_pipeline | Fecha de ejecución: 2026-03-26 22:59:46
+2026-03-26 22:59:46 | INFO     | pipeline:__main__:ejecutar_pipeline | ================================================================================
+2026-03-26 22:59:46 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:59:46 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 0: VALIDACIÓN DE DATOS
+2026-03-26 22:59:46 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:59:46 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === INICIANDO FASE DE EXTRACCIÓN ===
+2026-03-26 22:59:46 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Cargando dataset: data/raw/remote_work_mental_health.csv
+2026-03-26 22:59:46 | WARNING  | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Columnas faltantes en remote_work: {'Employment_Status', 'Productivity', 'Work_Life_Balance', 'Company_Size'}
+2026-03-26 22:59:46 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_remote_work | Dataset cargado: 5000 filas, 20 columnas
+2026-03-26 22:59:46 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Cargando dataset: data/raw/mental_health_tech_survey.csv
+2026-03-26 22:59:46 | INFO     | pipeline:etl.extract.extract_datasets:cargar_dataset_tech_survey | Dataset cargado: 1259 filas, 27 columnas
+2026-03-26 22:59:46 | INFO     | pipeline:etl.extract.extract_datasets:ejecutar_extraccion | === EXTRACCIÓN COMPLETADA: 6259 registros totales ===
+2026-03-26 22:59:46 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Ejecutando validación de datasets...
+2026-03-26 22:59:46 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: remote_work_mental_health
+2026-03-26 22:59:46 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  col_Work_Location_sin_nulos
+  ✓ PASS  col_Mental_Health_Condition_sin_nulos
+  ✓ PASS  col_Age_sin_nulos
+  ✓ PASS  col_Gender_sin_nulos
+  ✓ PASS  edad_en_rango
+  ✓ PASS  horas_en_rango
+--------------------------------------------------
+Total: 9/9 validaciones pasadas
+2026-03-26 22:59:46 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | Validando dataset: mental_health_tech_survey
+2026-03-26 22:59:46 | INFO     | pipeline:etl.utils.validators:ejecutar_validacion | ==================================================
+REPORTE DE VALIDACIÓN
+==================================================
+  ✓ PASS  tiene_registros
+  ✓ PASS  columnas_minimas
+  ✓ PASS  sin_duplicados_exactos
+  ✓ PASS  generos_validos
+  ✗ FAIL  edad_en_rango
+--------------------------------------------------
+Total: 4/5 validaciones pasadas
+2026-03-26 22:59:46 | WARNING  | pipeline:etl.utils.validators:ejecutar_validacion | ✗ Algunos datasets fallaron validación
+2026-03-26 22:59:46 | WARNING  | pipeline:__main__:ejecutar_pipeline | Validación de datos: FALLIDA - continuando con precaución
+2026-03-26 22:59:46 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:59:46 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 1: EXTRACCIÓN
+2026-03-26 22:59:46 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:59:46 | INFO     | pipeline:__main__:ejecutar_pipeline | Datasets cargados exitosamente
+2026-03-26 22:59:46 | INFO     | pipeline:__main__:ejecutar_pipeline | 
+2026-03-26 22:59:46 | INFO     | pipeline:__main__:ejecutar_pipeline | >>> FASE 2: TRANSFORMACIÓN
+2026-03-26 22:59:46 | INFO     | pipeline:__main__:ejecutar_pipeline | ----------------------------------------
+2026-03-26 22:59:46 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | Construyendo dim_tiempo para el año 2024
+2026-03-26 22:59:46 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_tiempo | dim_tiempo creada: 12 registros
+2026-03-26 22:59:46 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | Construyendo dim_trabajo
+2026-03-26 22:59:46 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_trabajo | dim_trabajo creada: 861 registros
+2026-03-26 22:59:46 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | Construyendo dim_demografia
+2026-03-26 22:59:46 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_demografia | dim_demografia creada: 90 registros
+2026-03-26 22:59:46 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | Construyendo dim_soporte
+2026-03-26 22:59:46 | INFO     | pipeline:etl.transform.build_dimensions:construir_dim_soporte | dim_soporte creada: 5 registros
+2026-03-26 22:59:46 | INFO     | pipeline:etl.transform.build_fact_table:construir_fact_table | Construyendo fact_bienestar_laboral

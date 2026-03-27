@@ -1,0 +1,56 @@
+# ================================================================================
+# DOCKER COMPOSE — MENTAL HEALTH REMOTE WORK
+# ================================================================================
+# Infraestructura de contenedores para el datamart PostgreSQL
+#
+# Servicios:
+#   - postgres: Base de datos PostgreSQL 15 (datamart)
+#   - pgadmin:  Interfaz web de administración (opcional, puerto 5050)
+#
+# Autor: Gerardo Suárez T. (gtsuarez-analytics)
+# Proyecto: Salud Mental en el Trabajo Remoto
+# ================================================================================
+
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: mental_health_postgres
+    environment:
+      POSTGRES_DB: mental_health_db
+      POSTGRES_USER: ${DB_USER:-admin}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-Thomasdeskgst10-}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-admin} -d mental_health_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - mental_health_net
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: mental_health_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-gerardo@analytics.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-Thomasdeskgst10-}
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    networks:
+      - mental_health_net
+    profiles:
+      - with-pgadmin
+
+volumes:
+  postgres_data:
+
+networks:
+  mental_health_net:
+    driver: bridge

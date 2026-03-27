@@ -1,0 +1,91 @@
+id_demografia,genero,rango_etario,region,pais
+1,Other,26-35,Europe,Unknown
+2,Female,36-45,Asia,Unknown
+3,Other,56-65,North America,Unknown
+4,Male,26-35,Europe,Unknown
+5,Male,46-55,North America,Unknown
+6,Other,56-65,South America,Unknown
+7,Other,26-35,Asia,Unknown
+8,Other,36-45,North America,Unknown
+9,Other,56-65,Europe,Unknown
+10,Female,26-35,North America,Unknown
+11,Other,26-35,Oceania,Unknown
+12,Female,46-55,Africa,Unknown
+13,Female,36-45,Europe,Unknown
+14,Other,46-55,North America,Unknown
+15,Other,36-45,Oceania,Unknown
+16,Female,56-65,Africa,Unknown
+17,Other,26-35,Africa,Unknown
+18,Other,36-45,Europe,Unknown
+19,Other,46-55,Oceania,Unknown
+20,Male,56-65,South America,Unknown
+21,Female,26-35,South America,Unknown
+22,Other,26-35,North America,Unknown
+23,Other,36-45,Africa,Unknown
+24,Other,46-55,Asia,Unknown
+25,Male,56-65,North America,Unknown
+26,Male,46-55,South America,Unknown
+27,Female,46-55,Oceania,Unknown
+28,Other,46-55,Europe,Unknown
+29,Female,18-25,Asia,Unknown
+30,Male,36-45,Europe,Unknown
+31,Male,46-55,Asia,Unknown
+32,Female,26-35,Asia,Unknown
+33,Other,18-25,Africa,Unknown
+34,Female,46-55,Europe,Unknown
+35,Male,26-35,North America,Unknown
+36,Male,26-35,South America,Unknown
+37,Female,26-35,Oceania,Unknown
+38,Female,18-25,Africa,Unknown
+39,Female,36-45,South America,Unknown
+40,Other,56-65,Asia,Unknown
+41,Male,36-45,Asia,Unknown
+42,Other,46-55,South America,Unknown
+43,Other,18-25,Europe,Unknown
+44,Other,18-25,Asia,Unknown
+45,Female,18-25,South America,Unknown
+46,Other,56-65,Oceania,Unknown
+47,Male,56-65,Europe,Unknown
+48,Female,56-65,Oceania,Unknown
+49,Female,18-25,North America,Unknown
+50,Male,26-35,Asia,Unknown
+51,Female,46-55,Asia,Unknown
+52,Other,36-45,South America,Unknown
+53,Female,26-35,Europe,Unknown
+54,Male,56-65,Oceania,Unknown
+55,Other,56-65,Africa,Unknown
+56,Male,26-35,Africa,Unknown
+57,Male,46-55,Africa,Unknown
+58,Female,36-45,Africa,Unknown
+59,Other,26-35,South America,Unknown
+60,Female,26-35,Africa,Unknown
+61,Female,56-65,Europe,Unknown
+62,Female,36-45,North America,Unknown
+63,Female,18-25,Oceania,Unknown
+64,Male,36-45,South America,Unknown
+65,Female,18-25,Europe,Unknown
+66,Male,36-45,North America,Unknown
+67,Female,36-45,Oceania,Unknown
+68,Male,46-55,Oceania,Unknown
+69,Female,46-55,North America,Unknown
+70,Male,36-45,Oceania,Unknown
+71,Other,46-55,Africa,Unknown
+72,Other,18-25,North America,Unknown
+73,Female,56-65,South America,Unknown
+74,Other,36-45,Asia,Unknown
+75,Other,18-25,Oceania,Unknown
+76,Female,46-55,South America,Unknown
+77,Male,26-35,Oceania,Unknown
+78,Male,46-55,Europe,Unknown
+79,Female,56-65,Asia,Unknown
+80,Male,36-45,Africa,Unknown
+81,Male,18-25,Asia,Unknown
+82,Male,18-25,Europe,Unknown
+83,Male,56-65,Asia,Unknown
+84,Male,18-25,North America,Unknown
+85,Other,18-25,South America,Unknown
+86,Male,56-65,Africa,Unknown
+87,Male,18-25,Africa,Unknown
+88,Male,18-25,South America,Unknown
+89,Male,18-25,Oceania,Unknown
+90,Female,56-65,North America,Unknown

@@ -1,0 +1,6 @@
+id_soporte,tipo_soporte,disponible
+1,Employee Assistance Program,True
+2,Counseling Services,True
+3,Mental Health Days,True
+4,Wellness Workshops,True
+5,No Support Available,False
